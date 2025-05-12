@@ -3,8 +3,9 @@ import db from '../db'
 const startAt = Date.now()
 let count = 0
 
-export default defineEventHandler(() => {
+export default defineEventHandler(async (event) => {
   // 记录每次访问
+  console.log('event: ', event)
   db.prepare('INSERT INTO pageviews DEFAULT VALUES').run()
   
   // 获取总访问量

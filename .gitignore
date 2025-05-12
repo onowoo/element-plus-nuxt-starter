@@ -4,3 +4,5 @@ dist
 .output
 .nuxt
 .vercel
+# SQLite database
+database.sqlite
