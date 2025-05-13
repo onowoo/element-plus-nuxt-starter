@@ -1,6 +1,7 @@
 import Database from 'better-sqlite3'
 
-const db = new Database('database.sqlite')
+const dataDir = 'https://api.xunun.cn'
+const db = new Database(`${dataDir}/database.sqlite`)
 
 // 初始化数据库
 db.exec(`

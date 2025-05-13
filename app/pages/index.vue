@@ -8,12 +8,28 @@ const selectedCourse = ref('')
 const studentName = ref('')
 
 // Replace the hardcoded courses with dynamic loading
-const { data: questionBank } = await useFetch('/api/questions')
+// 定义类型
+interface Course {
+  id: string | number
+  title: string
+  // 其他字段
+}
+interface Subject {
+  name: string
+  courses: Course[]
+}
+interface QuestionBank {
+  subjects: Subject[]
+}
+
+// 为 useFetch 指定泛型
+const { data: questionBank } = await useFetch<QuestionBank>('/api/questions')
+
 const courses = computed(() => {
-  return questionBank.value?.subjects.flatMap((subject: { courses: unknown[]; name: unknown }) => 
+  return questionBank.value?.subjects.flatMap((subject) => 
     subject.courses.map(course => ({
-      label: `${subject.name} - ${(course as { title: string }).title}`,
-      value: (course as { id: string | number }).id
+      label: `${subject.name} - ${course.title}`,
+      value: course.id
     }))
   ) || []
 })
