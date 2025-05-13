@@ -23,7 +23,7 @@ interface QuestionBank {
 }
 
 // 为 useFetch 指定泛型
-const { data: questionBank } = await useFetch<QuestionBank>('/api/questions')
+const { data: questionBank } = await useFetch<QuestionBank>('https://api.xunun.cn/questions.json')
 
 const courses = computed(() => {
   return questionBank.value?.subjects.flatMap((subject) => 

@@ -4,8 +4,6 @@ const courseId = ref(route.query.course as string)
 const studentName = ref(decodeURIComponent(route.query.name as string))
 const currentQuestionIndex = ref(0)
 const showHint = ref(false)
-
-// 添加selectedAnswer的定义
 const selectedAnswer = ref<number | null>(null)
 
 // 定义接口
@@ -30,7 +28,7 @@ interface Subject {
 }
 
 // 加载题库数据
-const { data: questionBank } = await useFetch<Subject>('/api/questions')
+const { data: questionBank } = await useFetch<Subject>('https://api.xunun.cn/questions.json')
 
 // 使用ref管理当前课程数据
 const currentCourseData = ref<Course | null>(null)
@@ -122,34 +120,11 @@ const answeredCount = computed(() => {
 })
 
 const showRank = ref(false)
-const rankList = ref<{ name: string, score: number }[]>([])
 
-const fetchRank = async () => {
-  const res = await $fetch('/api/rank', {
-    method: 'GET',
-    params: { course: courseId.value }
-  })
-  rankList.value = res.rank || []
-}
-
-const submitAnswers = async () => {
+const submitAnswers = () => {
   const score = calculateScore()
-  try {
-    await $fetch('/api/submit', {
-      method: 'POST',
-      body: {
-        course: courseId.value,
-        name: studentName.value,
-        score
-      }
-    })
-    ElMessage.success('提交成功')
-    await fetchRank()
-    showRank.value = true
-  } catch (error) {
-    ElMessage.error('提交失败')
-    console.error(error)
-  }
+  ElMessage.success(`测试完成,您的得分为${score}分！`)
+  showRank.value = true
 }
 // 移除 vue-typed-js 的 import
 
@@ -194,12 +169,10 @@ onUnmounted(() => {
       {{ studentName }}的{{ currentCourseData?.title }}测试
     </h1>
     <div v-if="showRank">
-      <div class="mb-6 text-xl font-bold text-center">排行榜</div>
-      <el-table :data="rankList" style="width: 100%">
-        <el-table-column prop="index" label="排名" width="60" />
-        <el-table-column prop="name" label="姓名" />
-        <el-table-column prop="score" label="分数" />
-      </el-table>
+      <div class="mb-6 text-xl font-bold text-center">测试完成</div>
+      <div class="text-center text-2xl mb-4">
+        您的得分: {{ calculateScore() }}分
+      </div>
       <el-button class="mt-6 w-full" type="primary" @click="$router.push('/')">返回首页</el-button>
     </div>
     <div v-else>
