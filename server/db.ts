@@ -13,6 +13,7 @@ db.exec(`
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     score INTEGER NOT NULL DEFAULT 0,
+    course TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 `)

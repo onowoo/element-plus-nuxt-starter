@@ -20,6 +20,9 @@ importers:
       pinia:
         specifier: ^2.1.6
         version: 2.3.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
+      vue-typed-js:
+        specifier: ^0.1.2
+        version: 0.1.2
     devDependencies:
       '@element-plus/nuxt':
         specifier: ^1.1.1
@@ -3860,6 +3863,10 @@ packages:
     resolution: {integrity: sha512-S/5/0kFftkq27FPNye0XM1e2NsnoD/3FS+pBmbjmmtLT6I+i344KoOf7pvXreaFsDamWeaJX55nczA1m5PsBDg==}
     engines: {node: '>=16'}
 
+  typed.js@git+https://git@github.com:mattboldt/typed.js.git#bddda19a147ec1f145d2bc0b466f2b9bcdc90ce5:
+    resolution: {commit: bddda19a147ec1f145d2bc0b466f2b9bcdc90ce5, repo: git@github.com:mattboldt/typed.js.git, type: git}
+    version: 2.1.0
+
   typescript@5.8.2:
     resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
@@ -4175,6 +4182,9 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
+
+  vue-typed-js@0.1.2:
+    resolution: {integrity: sha512-9kDGuz17uYJghe/1hepRWiWYssgUFtrKnMGPHlWjVRxdvs/d9xYYWMkgzztjhx1R1B33hXkN8ctmkzCYHQ+caA==}
 
   vue@3.5.13:
     resolution: {integrity: sha512-wmeiSMxkZCSc+PM2w2VRsOYAZC8GdipNFRTsLSfodVqI9mbejKeXEGr8SckuLnrQPGe3oJN5c3K0vpoU9q/wCQ==}
@@ -8691,6 +8701,8 @@ snapshots:
 
   type-fest@4.37.0: {}
 
+  typed.js@git+https://git@github.com:mattboldt/typed.js.git#bddda19a147ec1f145d2bc0b466f2b9bcdc90ce5: {}
+
   typescript@5.8.2: {}
 
   ufo@1.5.4: {}
@@ -9004,6 +9016,10 @@ snapshots:
       '@volar/typescript': 2.4.12
       '@vue/language-core': 2.2.8(typescript@5.8.2)
       typescript: 5.8.2
+
+  vue-typed-js@0.1.2:
+    dependencies:
+      typed.js: git+https://git@github.com:mattboldt/typed.js.git#bddda19a147ec1f145d2bc0b466f2b9bcdc90ce5
 
   vue@3.5.13(typescript@5.8.2):
     dependencies:

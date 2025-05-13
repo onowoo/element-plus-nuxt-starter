@@ -1,0 +1,65 @@
+{
+  "subjects": [
+    {
+      "name": "摄影摄像",
+      "courses": [
+        {
+          "id": "class1",
+          "title": "摄影构图基础",
+          "questions": [
+            {
+              "id": 1,
+              "question": "哪张照片的全身像构图是正确的？",
+              "images": [
+                "/photo-class-1/q1-a.jpg",
+                "/photo-class-1/q1-b.jpg"
+              ],
+              "answer": 0,
+              "hint": "三分法构图将画面分为九等份，主体应位于交叉点上"
+            },
+            {
+              "id": 2,
+              "question": "哪张照片的九分像构图是正确的？",
+              "images": [
+                "/photo-class-1/q2-a.jpg",
+                "/photo-class-1/q2-b.jpg"
+              ],
+              "answer": 1,
+              "hint": "引导线应自然地将视线引向主体"
+            },
+            {
+              "id": 3,
+              "question": "哪张照片的中景构图是正确的？",
+              "images": [
+                "/photo-class-1/q3-a.jpg",
+                "/photo-class-1/q3-b.jpg"
+              ],
+              "answer": 0,
+              "hint": "对称构图要求画面元素在轴线两侧平衡"
+            },
+            {
+              "id": 4,
+              "question": "哪张照片的特写构图是正确的？",
+              "images": [
+                "/photo-class-1/q4-a.jpg",
+                "/photo-class-1/q4-b.jpg"
+              ],
+              "answer": 1,
+              "hint": "留白能创造呼吸空间，突出主体"
+            },
+            {
+              "id": 5,
+              "question": "哪张照片的远景构图是正确的？",
+              "images": [
+                "/photo-class-1/q5-a.jpg",
+                "/photo-class-1/q5-b.jpg"
+              ],
+              "answer": 1,
+              "hint": "框架构图利用前景元素自然引导视线"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
